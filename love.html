@@ -11,7 +11,45 @@
         background-size: cover
       }</style>
 </head>
-<body> 
- 
+<body>
+  <div class="check">
+    <input class="center" type="password">
+</div>
+  <audio id="myaudio" autoplay>
+    <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg"/>
+  </audio>
+  <script>
+
+    var context;
+    window.onload = function() {
+     context = new AudioContext();
+      context.onstatechange = function() {
+        //if you have permissions, the audioContext will transition to 'running' immediately
+        if(context.state == 'running') {
+          play();
+        }
+      }
+    };
+
+    function play() {
+        //ensure the promise is handled here
+        var promise = document.getElementById('myaudio').play();
+        if (promise !== undefined) {
+          promise.then(_ => {
+            console.log("playing");
+          }).catch(error => {
+            // Autoplay was prevented.
+          });
+        }
+    }
+
+    //play after the user interacts with the page
+    document.querySelector('button').addEventListener('click', function() {
+      context.resume().then(function() {
+        play();
+      });
+    });
+
+  </script>
 </body>
 </html>
