@@ -4,52 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>wxtching</title>
     <style> body {
         background-image: url("water.gif");
         background-repeat: no-repeat;
         background-size: cover
       }</style>
-</head>
-<body>
-  <div class="check">
-    <input class="center" type="password">
-</div>
-  <audio id="myaudio" autoplay>
-    <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg"/>
-  </audio>
-  <script>
+ 
+ <style>
 
-    var context;
-    window.onload = function() {
-     context = new AudioContext();
-      context.onstatechange = function() {
-        //if you have permissions, the audioContext will transition to 'running' immediately
-        if(context.state == 'running') {
-          play();
-        }
-      }
-    };
+  .nter { 
+  width:100%;
+  height: auto;
+  top:0;
+  left: -300px;;
+  position: relative; 
+  z-index: 1;
+  } 
 
-    function play() {
-        //ensure the promise is handled here
-        var promise = document.getElementById('myaudio').play();
-        if (promise !== undefined) {
-          promise.then(_ => {
-            console.log("playing");
-          }).catch(error => {
-            // Autoplay was prevented.
-          });
-        }
-    }
+  .enter {
+  top: 54%;
+  left: 750px;
+  width: 440px;
+  height:
+  57px;
+  position: absolute;
+  z-index: 2;
+  background:none 
+  }
 
-    //play after the user interacts with the page
-    document.querySelector('button').addEventListener('click', function() {
-      context.resume().then(function() {
-        play();
-      });
-    });
+ </style>
 
-  </script>
-</body>
+
+<body style="text-align:center; margin: 0px;">
+
+  <div class="center" id="">
+     <img src="Untitled(6).png" class="nter" id="nter" />
+     <form action="https://codepen.io">
+      <input type="submit" class="enter" value=" " />
+  </form>
+  </div>
+
+
+  <div class="dropdown-content">
+    <a href="#">AYDN</a>
+    <a href="#">CHBB</a>
+    <a href="#">ORYN</a>
+    <a href="#">SANITA</a>
+    <a href="#">2829JANUARY2007</a>
+  </div>
+
+ </body>
 </html>
